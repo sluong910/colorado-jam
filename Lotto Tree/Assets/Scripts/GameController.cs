@@ -24,10 +24,10 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (timeLeft <= 120){
+        if (timeLeft <= 240){
             //to-do: leaf falling
             foreach(GameObject leaf in GameObject.FindGameObjectsWithTag("Leaf")){
-                leaf.transform.Translate(0, Time.deltaTime, 0);
+                leaf.transform.Translate(0, -Time.deltaTime, 0);
             }
         }
 
