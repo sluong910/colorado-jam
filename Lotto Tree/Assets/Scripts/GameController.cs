@@ -25,6 +25,6 @@ public class GameController : MonoBehaviour
             currentDraw[i] = Random.Range(1, 82);
         }
 
-        Debug.Log(string.Join(" ", currentDraw));
+        BroadcastMessage("GenerateLeafList", currentDraw);
     }
 }
