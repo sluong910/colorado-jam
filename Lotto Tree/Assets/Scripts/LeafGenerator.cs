@@ -5,21 +5,35 @@ using UnityEngine;
 public class LeafGenerator : MonoBehaviour
 {
 
+    private int m_MaxLeaves = 15;
+    private float m_LeafTime = 1.0f;
+
     private static System.Random m_rng = new System.Random();
     private List<(int, int)> m_leafList = new List<(int, int)>();
-    private int m_MaxLeaves = 15;
+    private float m_nextLeafTimer;
+    private Camera camera;
+    public GameObject m_leafPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         List<int> leaves1 = RandomNumbersToSum(50, 15);
         Debug.Log(string.Join(" ", leaves1));
+        m_nextLeafTimer = m_LeafTime;
+        camera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        m_nextLeafTimer -= Time.deltaTime;
+        if (m_nextLeafTimer <= 0.0f){
+            m_nextLeafTimer = m_LeafTime;
+            if (m_leafList.Count > 0){
+                GenerateLeafPrefab(m_leafList[m_leafList.Count-1]);
+                m_leafList.RemoveAt(m_leafList.Count-1);
+            }
+        }
     }
 
     private void GenerateLeafList(int[] drawing)
@@ -34,6 +48,13 @@ public class LeafGenerator : MonoBehaviour
 
         Debug.Log(string.Join(" ", m_leafList));
 
+    }
+
+    private void GenerateLeafPrefab((int, int) leaf)
+    {
+        Vector3 worldCoord = camera.ViewportToWorldPoint(new Vector3((2*leaf.Item2 + 1)/12.0f, 1, camera.nearClipPlane));
+        
+        Instantiate(m_leafPrefab, worldCoord, Quaternion.identity);
     }
 
     private void Shuffle(List<(int, int)> list)  
