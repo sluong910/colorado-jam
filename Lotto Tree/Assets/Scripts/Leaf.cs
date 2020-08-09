@@ -15,4 +15,9 @@ public class Leaf : MonoBehaviour
     {
         transform.Translate(0, -Time.deltaTime, 0);
     }
+
+    public void SetLeafNum(int num)
+    {
+        BroadcastMessage("SetLabel", num);
+    }
 }
