@@ -46,8 +46,6 @@ public class LeafGenerator : MonoBehaviour
 
         Shuffle(m_leafList);
 
-        Debug.Log(string.Join(" ", m_leafList));
-
     }
 
     private void GenerateLeafPrefab((int, int) leaf)

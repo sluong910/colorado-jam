@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
             currentDraw[i] = Random.Range(1, 82);
         }
 
+        BroadcastMessage("ClearBoxes");
         BroadcastMessage("GenerateLeafList", currentDraw);
     }
 }

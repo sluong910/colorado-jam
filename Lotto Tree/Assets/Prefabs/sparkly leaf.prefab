@@ -4766,6 +4766,7 @@ GameObject:
   - component: {fileID: 8369655765797904446}
   - component: {fileID: 8369655765797904440}
   - component: {fileID: 7654459581109266043}
+  - component: {fileID: 1831185146676748446}
   m_Layer: 0
   m_Name: sparkly leaf
   m_TagString: Leaf
@@ -4877,6 +4878,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce97a870a8a9c0745ac3d60d51341a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leafNum: 0
+--- !u!50 &1831185146676748446
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369655765797904445}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8369655766345718540
 GameObject:
   m_ObjectHideFlags: 0

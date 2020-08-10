@@ -8,13 +8,13 @@ using System;
 public class Timer : MonoBehaviour
 {
     private int timeLeft;
-    private static int playTime = 10; //how often game is drawn in seconds
+    private static int playTime = 60; //how often game is drawn in seconds
     private TextMeshPro textmeshPro;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeLeft = playTime;
+        timeLeft = 0;
         textmeshPro = GetComponent<TextMeshPro>();
         InvokeRepeating("decreaseTime", 1.0f, 1.0f);
     }
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
             timeLeft = playTime;
             SendMessageUpwards("StartDraw");
         }
-        textmeshPro.SetText(String.Format("Betting Period {0}:{1}", timeLeft/60, (timeLeft%60).ToString("D2") ));
+        textmeshPro.SetText(String.Format("Next Draw In:\n{0}:{1}", timeLeft/60, (timeLeft%60).ToString("D2") ));
         
     }
 

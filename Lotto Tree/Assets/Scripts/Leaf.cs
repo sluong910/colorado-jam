@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Leaf : MonoBehaviour
 {
+    public int leafNum;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,6 @@ public class Leaf : MonoBehaviour
     public void SetLeafNum(int num)
     {
         BroadcastMessage("SetLabel", num);
+        leafNum = num;
     }
 }

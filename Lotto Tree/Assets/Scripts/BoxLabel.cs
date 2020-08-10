@@ -30,4 +30,11 @@ public class BoxLabel : MonoBehaviour
         boxLabel.SetText(String.Format("{0}", boxTotal));
         boxLabel.ForceMeshUpdate(true);
     }
+
+    public void ClearBox()
+    {
+        boxTotal = 0;
+        boxLabel.SetText(String.Format("{0}", boxTotal));
+        boxLabel.ForceMeshUpdate(true);
+    }
 }
