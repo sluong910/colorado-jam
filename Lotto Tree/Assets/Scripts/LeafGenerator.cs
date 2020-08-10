@@ -52,7 +52,7 @@ public class LeafGenerator : MonoBehaviour
 
     private void GenerateLeafPrefab((int, int) leaf)
     {
-        Vector3 worldCoord = camera.ViewportToWorldPoint(new Vector3((2*leaf.Item2 + 1)/12.0f, 1, camera.nearClipPlane));
+        Vector3 worldCoord = camera.ViewportToWorldPoint(new Vector3((2*leaf.Item2 + 1)/12.0f, 1, 1));
         GameObject newLeaf = Instantiate(m_leafPrefab, worldCoord, Quaternion.identity);
         Leaf leafScript = newLeaf.GetComponent<Leaf>();
         leafScript.SetLeafNum(leaf.Item1);
